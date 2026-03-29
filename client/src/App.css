@@ -1,0 +1,181 @@
+/* Global iOS-like variables */
+:root {
+  --accent: #007aff;
+  --accent-bg: rgba(0, 122, 255, 0.1);
+  --accent-border: rgba(0, 122, 255, 0.4);
+  --border: rgba(255, 255, 255, 0.2);
+  --text-h: #1d1d1f;
+  --social-bg: rgba(255, 255, 255, 0.3);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* iOS glass card */
+.counter {
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  margin-bottom: 24px;
+}
+
+.counter:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.counter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* HERO (glass layered animation) */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .base,
+.hero .framework,
+.hero .vite {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero .base {
+  width: 170px;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.hero .framework {
+  z-index: 1;
+  top: 30px;
+  height: 28px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero .vite {
+  top: 100px;
+  height: 26px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ✨ Smooth floating animation */
+@keyframes float {
+  0% {
+    transform: translate(-50%, 0px);
+  }
+
+  50% {
+    transform: translate(-50%, -10px);
+  }
+
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+
+/* CENTER */
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  backdrop-filter: blur(10px);
+}
+
+/* NEXT STEPS (glass layout) */
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+#next-steps>div {
+  flex: 1;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+#next-steps>div:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  margin-bottom: 16px;
+  width: 22px;
+  height: 22px;
+}
+
+/* Docs section */
+#docs {
+  border-right: 1px solid var(--border);
+}
+
+/* LINKS */
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+#next-steps ul a {
+  color: var(--text-h);
+  font-size: 14px;
+  border-radius: 10px;
+  background: var(--social-bg);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+#next-steps ul a:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
+}
+
+/* Spacer */
+#spacer {
+  height: 80px;
+  border-top: 1px solid var(--border);
+}
+
+/* Tick line */
+.ticks {
+  position: relative;
+  width: 100%;
+}
+
+.ticks::before,
+.ticks::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  border: 5px solid transparent;
+}
+
+.ticks::before {
+  left: 0;
+  border-left-color: var(--border);
+}
+
+.ticks::after {
+  right: 0;
+  border-right-color: var(--border);
+}
